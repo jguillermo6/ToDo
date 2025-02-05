@@ -1,6 +1,5 @@
 ﻿using Ardalis.Result;
 using MediatR;
-using ToDo.Core.UserCalendarAgregate;
 
 namespace ToDo.UseCases.UserCalendars.AddTaskItem;
 

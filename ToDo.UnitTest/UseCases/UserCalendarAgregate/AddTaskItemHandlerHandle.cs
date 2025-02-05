@@ -12,7 +12,6 @@ public class AddTaskItemHandlerHandle
 {
     private readonly IRepository<UserCalendar> _repository = Substitute.For<IRepository<UserCalendar>>();
     private AddTaskItemHandler _handler;
-    private IMediator _mediator;
 
     public AddTaskItemHandlerHandle()
     {
@@ -29,7 +28,6 @@ public class AddTaskItemHandlerHandle
         var request = new AddTaskItemCommand(userCalendarId, "Test ToDo", TimeSpan.FromHours(2));
 
         // Act
-        _mediator.Send(request, CancellationToken.None);
         var result = await _handler.Handle(request, CancellationToken.None);
         // Assert
         Assert.True(result.IsSuccess);
