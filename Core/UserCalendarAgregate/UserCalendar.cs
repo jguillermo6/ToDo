@@ -4,7 +4,7 @@ namespace ToDo.Core.UserCalendarAgregate
 {
     public class UserCalendar : IAggregateRoot
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public int UserId { get; private set; }
         public DateOnly Date { get; private set; }
         private readonly List<TaskItem> _tasks = new();
